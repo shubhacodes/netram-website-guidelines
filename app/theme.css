@@ -1,0 +1,157 @@
+/* Font variables are now handled by Next.js font optimization */
+
+/* Theme Base Variables */
+:root {
+  --theme-transition: all 0.3s ease;
+}
+
+/* Theme 1 */
+[data-theme="1"] {
+  /* Colors */
+  --primary-green: #0f2e15;
+  --secondary-green: #dae2cb;
+  --beige: #fefae0;
+
+  /* Semantic Colors */
+  --bg-primary: var(--primary-green);
+  --bg-secondary: var(--secondary-green);
+  --text-on-dark: var(--beige);
+  --text-on-light: var(--primary-green);
+  --border-light: var(--beige);
+  --border-dark: var(--primary-green);
+
+  /* Fonts */
+  --font-heading: var(--font-playfair), serif;
+  --font-body: var(--font-instrument), sans-serif;
+}
+
+/* Theme 2 - Brand Guideline 2 */
+[data-theme="2"] {
+  /* Colors */
+  --primary-green: #384933;
+  --secondary-green: #d8d9bc;
+  --beige: #fffcf2;
+
+  /* Semantic Colors */
+  --bg-primary: var(--primary-green);
+  --bg-secondary: var(--secondary-green);
+  --text-on-dark: var(--beige);
+  --text-on-light: var(--primary-green);
+  --border-light: var(--beige);
+  --border-dark: var(--primary-green);
+
+  /* Fonts */
+  --font-heading: var(--font-hedvig), serif;
+  --font-body: var(--font-mulish), sans-serif;
+}
+
+/* Theme 3 - Brand Guideline 3 */
+[data-theme="3"] {
+  /* Colors */
+  --primary-green: #39442b;
+  --secondary-green: #e9ebdd;
+  --beige: #fdfdf1;
+
+  /* Semantic Colors */
+  --bg-primary: var(--primary-green);
+  --bg-secondary: var(--secondary-green);
+  --text-on-dark: var(--beige);
+  --text-on-light: var(--primary-green);
+  --border-light: var(--beige);
+  --border-dark: var(--primary-green);
+
+  /* Fonts */
+  --font-heading: var(--font-libre), serif;
+  --font-body: var(--font-inter), sans-serif;
+}
+
+/* Utility Classes */
+.theme-transition {
+  transition: var(--theme-transition);
+}
+
+/* Typography */
+.theme-heading {
+  font-family: var(--font-heading) !important;
+  font-weight: 600;
+  font-display: swap;
+}
+
+.theme-body {
+  font-family: var(--font-body) !important;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Ensure theme fonts override any other font rules with higher specificity */
+[data-theme] .theme-heading,
+[data-theme] h1,
+[data-theme] h2,
+[data-theme] h3,
+[data-theme] h4,
+[data-theme] h5,
+[data-theme] h6 {
+  font-family: var(--font-heading) !important;
+}
+
+[data-theme] .theme-body,
+[data-theme] body,
+[data-theme] p,
+[data-theme] span,
+[data-theme] div,
+[data-theme] button,
+[data-theme] input,
+[data-theme] textarea {
+  font-family: var(--font-body) !important;
+}
+
+/* Additional specificity for common elements */
+[data-theme] * {
+  font-family: var(--font-body) !important;
+}
+
+[data-theme] .theme-heading,
+[data-theme] h1,
+[data-theme] h2,
+[data-theme] h3,
+[data-theme] h4,
+[data-theme] h5,
+[data-theme] h6 {
+  font-family: var(--font-heading) !important;
+}
+
+/* Background Colors */
+.bg-theme-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-theme-secondary {
+  background-color: var(--bg-secondary);
+}
+
+/* Text Colors */
+.text-theme-on-dark {
+  color: var(--text-on-dark);
+}
+
+.text-theme-on-light {
+  color: var(--text-on-light);
+}
+
+/* Opacity Variants */
+.bg-theme-primary-opacity {
+  background-color: color-mix(in srgb, var(--bg-primary) 60%, transparent);
+}
+
+.text-theme-on-dark-opacity {
+  color: color-mix(in srgb, var(--text-on-dark) 90%, transparent);
+}
+
+/* Border Colors */
+.border-theme-light {
+  border-color: color-mix(in srgb, var(--border-light) 30%, transparent);
+}
+
+.border-theme-dark {
+  border-color: color-mix(in srgb, var(--border-dark) 30%, transparent);
+}
